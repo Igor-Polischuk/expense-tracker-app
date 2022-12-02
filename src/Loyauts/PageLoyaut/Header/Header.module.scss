@@ -1,0 +1,20 @@
+.header{
+    background-color: var(--main-color);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 20px;
+    padding: 10px 40px;
+}
+
+.name{
+    font-size: var(--fs-lf);
+    font-weight: bold;
+}
+
+.photo{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: gray;
+}

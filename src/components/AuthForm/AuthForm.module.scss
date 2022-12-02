@@ -1,0 +1,45 @@
+.form{
+    background-color: var(--main-color);
+    padding: 20px 100px;
+    border-radius: 10px;
+    max-width: 500px;
+
+    p{
+        margin: 10px 0;
+    }
+
+    @media (max-width: 1080px) {
+        padding: 20px 50px;
+    }
+}
+
+.googleBtn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    font-weight: bold;
+    font-size: var(--fs-md);
+    background-color: rgba(0, 0, 0, 0);
+    border: 1px solid var(--accent-color);
+    border-radius: 50px;
+    cursor: pointer;
+    padding: 5px;
+    color: var(--f-color);
+
+    img{
+        max-width: 30px;
+
+    }
+}
+
+.or{
+    font-size: var(--fs-sm);
+    color: var(--f-color-helper);
+    text-align: center;
+}
+
+.wrapper{
+    max-width: 350px;
+}

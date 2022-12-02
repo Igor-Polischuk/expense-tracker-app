@@ -1,0 +1,21 @@
+.paymentWrapper {
+    display: flex;
+    width: 220px;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--f-color-helper);
+}
+
+.paymentSum {
+    outline: none;
+    border: 1px solid var(--accent-color);
+    background-color: transparent;
+    color: var(--f-color);
+    text-align: center;
+    border-radius: 6px;
+    width: 70px;
+    height: 25px;
+    padding: 0 3px;
+    font-size: var(--fs-md);
+}
+

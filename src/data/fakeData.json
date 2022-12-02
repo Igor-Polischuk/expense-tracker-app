@@ -1,0 +1,78 @@
+{
+    "name": "Personal finance",
+    "type": "personal",
+    "currencyName": "UAH",
+    "paymentMethods": [
+        {
+            "method": "Cash",
+            "amount": 4500
+        },
+        {
+            "method": "Card",
+            "amount": 2100
+        }
+    ],
+    "total": 6600,
+    "transactions": [
+        {
+            "category": "food",
+            "sum": -230,
+            "date": "Thu Dec 01 2022",
+            "type": "expense"
+        },
+        {
+            "category": "transport",
+            "sum": -70,
+            "date": "Thu Dec 01 2022",
+            "type": "expense"
+        },
+        {
+            "category": "Education",
+            "sum": -1030,
+            "date": "Thu Dec 01 2022",
+            "type": "expense"
+        },
+        {
+            "category": "Utility bill",
+            "sum": -720,
+            "date": "Thu Dec 01 2022",
+            "type": "expense"
+        },
+        {
+            "category": "food",
+            "sum": -630,
+            "date": "Thu Nov 30 2022",
+            "type": "expense"
+        },
+        {
+            "category": "Salary",
+            "sum": 7500,
+            "date": "Wen Nov 30 2022",
+            "type": "income"
+        },
+        {
+            "category": "Gym",
+            "sum": -600,
+            "date": "Wen Nov 30 2022",
+            "type": "expense"
+        },
+        {
+            "category": "Utility bill",
+            "sum": -720,
+            "date": "Wen Nov 30 2022",
+            "type": "expense"
+        },
+        {
+            "category": "Food",
+            "sum": -72,
+            "date": "Wen Nov 30 2022",
+            "type": "expense"
+        },
+        {
+            "category": "Food",
+            "sum": -220,
+            "date": "Wen Now 30 2022",
+            "type": "expense"
+        }
+    ]
+}

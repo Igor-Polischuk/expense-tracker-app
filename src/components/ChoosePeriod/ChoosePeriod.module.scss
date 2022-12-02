@@ -1,0 +1,25 @@
+.wrapper{
+    display: flex;
+    justify-content: space-around;
+
+    .chooseBtn{
+        background-color: transparent;
+        color: var(--f-color);
+        padding: 5px 30px;
+
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+
+    .chooseBtn.active{
+        background-color: var(--accent-color);
+        color: #fff;
+        transition: background-color 0.2s;
+
+        &:hover{
+            text-decoration: none;
+            background-color: var(--accent-color-hover);   
+        }
+    }
+}

@@ -1,0 +1,10 @@
+.BalanceInfoCard{
+    background-color: var(--main-color);
+    border-radius: 5px;
+    padding: 20px 10px;
+    font-size: var(--fs-lg);
+
+    .sum{
+        font-weight: bold;
+    }
+}
