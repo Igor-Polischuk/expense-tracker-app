@@ -15,6 +15,7 @@ import { setUser } from "../../../redux/slices/userSlice";
 import { useState, useEffect } from "react";
 import styles from './Sidebar.module.scss';
 import useWindowSize from "../../../hooks/useWindowSize";
+import { openAddTransactionModal } from "../../../redux/slices/modalSlice";
 
 const setActiveClass = ({ isActive }: { isActive: boolean }) => isActive ? styles.active_link : ''
 
@@ -37,6 +38,7 @@ export const Sidebar = () => {
         auth.signOut();
         dispatch(setUser({ email: '', uid: '' }));
     }
+
     return (
         <>
             <aside className={classNames}>
@@ -48,7 +50,7 @@ export const Sidebar = () => {
                 </div>
 
                 <nav>
-                    <button className={`button--filled rounded fit flex-alc ${styles.addBtn}`}><AiOutlinePlus fontSize={22} /><span>Add</span></button>
+                    <button className={`button--filled rounded fit flex-alc ${styles.addBtn}`} onClick={() => dispatch(openAddTransactionModal())}><AiOutlinePlus fontSize={22} /><span>Add</span></button>
                     <ul className={styles.navigation}>
                         <li>
                             <NavLink to='/dashboard' className={setActiveClass}><MdDashboard /><span>Dashboard</span></NavLink>

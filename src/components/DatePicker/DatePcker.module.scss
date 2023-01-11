@@ -1,0 +1,27 @@
+.date{
+    position: relative;
+    cursor: pointer;
+}
+
+.dateBtn{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.gray{
+    color: var(--f-color-helper);
+}
+
+.calendar{
+    position: absolute;
+    top: 110%;
+    left: 0;
+    right: 0;
+    display: none;
+    z-index: 10000;
+}
+
+.show{
+    display: block;
+}

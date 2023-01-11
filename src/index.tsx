@@ -8,6 +8,8 @@ import App from './app';
 import './firebase'
 import './styles/index.scss';
 import SettingsProvider from './hoc/SettingsProvider';
+
+
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );

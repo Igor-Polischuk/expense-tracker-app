@@ -1,0 +1,121 @@
+.modal {
+    min-height: 400px;
+    position: relative;
+}
+
+.confirm{
+    position: absolute;
+    bottom: 0;
+}
+
+.sum {
+    display: flex;
+    gap: 20px;
+    margin: 20px 0;
+
+    .currency__name {
+        background-color: var(--accent-color);
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 5px 14px;
+        border-radius: 14px;
+        text-decoration: underline;
+    }
+
+    .ammount {
+        border: none;
+        background-color: transparent;
+        outline: none;
+        color: var(--f-color);
+        font-weight: 600;
+        border-bottom: 1px solid var(--accent-color);
+        width: 100%;
+
+        &::placeholder {
+            font-weight: normal;
+            color: var(--f-color-helper)
+        }
+    }
+}
+
+.transaction__type {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    margin: 20px 0;
+}
+
+.transaction__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.transaction__descr {
+    resize: none;
+    width: 100%;
+    max-height: 200px;
+    font-family: var(--family);
+    font-size: 16px;
+    background-color: transparent;
+    color: var(--f-color);
+    outline: none;
+    border: none;
+    border: 1px solid var(--accent-color);
+    padding: 5px;
+    border-radius: 4px;
+    margin-bottom: 30px;
+}
+
+.type__btn {
+    background-color: transparent;
+    color: var(--f-color);
+    text-transform: capitalize;
+    font-size: 22px;
+    position: relative;
+    cursor: pointer;
+}
+
+.type__btn.active::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    height: 2px;
+    background-color: var(--accent-color);
+}
+
+.transfer__input {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid var(--accent-color);
+    border-radius: 10px;
+    padding: 1px 15px;
+}
+
+.transfer__input__wrapper {
+    p {
+        padding-left: 10px;
+        font-size: 18px;
+        margin-bottom: 5px;
+    }
+}
+
+.icon {
+    position: absolute;
+    right: 0;
+}
+
+.overlay{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1200;
+}

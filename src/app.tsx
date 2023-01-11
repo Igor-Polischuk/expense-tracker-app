@@ -1,13 +1,16 @@
-import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import { LoginPage, Main, RegisterPage, CreateAccauntPage } from './pages';
+import { LoginPage, Main, RegisterPage, CreateAccauntPage, Dashboard } from './pages';
 import { RequireAuth } from './hoc/RequireAuth';
 import AuthLoyaut from './Loyauts/authLoyaut';
 import PageLoyaut from './Loyauts/PageLoyaut';
+import { AddTransactionModal, AddPaymentsModal } from './components/Modal';
+import { HaveAccaunt } from './hoc/HaveAccaunt';
 
 // import 'chart.js/auto';
 
+
 function App() {
+
   return (
     <div className="App">
       <Routes>
@@ -22,35 +25,48 @@ function App() {
           </RequireAuth>
         } />
         <Route path='/' element={<PageLoyaut />}>
-        <Route index path='/' element={<Main />} />
+          <Route index path='/' element={<Main />} />
           <Route path='/dashboard' element={
             <RequireAuth>
-              <h1>Dashboard</h1>
+              <HaveAccaunt>
+                <Dashboard />
+              </HaveAccaunt>
             </RequireAuth>
           } />
           <Route path='/transactions' element={
             <RequireAuth>
-              <h1>Transactions</h1>
+              <HaveAccaunt>
+                <h1>Transactions</h1>
+              </HaveAccaunt>
             </RequireAuth>
           } />
           <Route path='/planning' element={
             <RequireAuth>
-              <h1>planning</h1>
+              <HaveAccaunt>
+                <h1>planning</h1>
+              </HaveAccaunt>
             </RequireAuth>
           } />
           <Route path='/statistics' element={
             <RequireAuth>
-              <h1>I love you</h1>
+              <HaveAccaunt>
+                <h1>I love you</h1>
+              </HaveAccaunt>
             </RequireAuth>
           } />
           <Route path='/settings' element={
             <RequireAuth>
-              <h1>settings</h1>
+              <HaveAccaunt>
+                <h1>settings</h1>
+              </HaveAccaunt>
             </RequireAuth>
           } />
         </Route>
       </Routes>
+      <AddTransactionModal />
+      <AddPaymentsModal />
     </div>
+
   );
 }
 

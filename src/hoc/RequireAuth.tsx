@@ -10,12 +10,11 @@ interface RequireAuthProps {
 export const RequireAuth: React.FC<RequireAuthProps> = ({children}) => {
     const location = useLocation();
     const [isAuth, loading] =  useAuth();
-
+    
     if (loading){
         return <LoadingOverlay/>
     }else{
         return (isAuth) ? children : <Navigate to='/login' state={{from: location}}/>
     }
-    // return children
 };
 

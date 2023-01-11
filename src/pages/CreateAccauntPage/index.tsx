@@ -1,6 +1,6 @@
 import { useState, ChangeEvent, useMemo, SyntheticEvent } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useAppDispatch } from '../../hooks/redux-hooks';
+import { useAppDispatch, useAppSelector } from '../../hooks/redux-hooks';
 import { setNewAccaunt } from '../../redux/slices/accauntSlice';
 import Input from '../../components/input';
 import MySelect from '../../components/MySelect';
@@ -8,8 +8,10 @@ import Logo from '../../components/Logo';
 import PaymentsMethods from './PaymetsMethods';
 import { Result } from '../../components/NewPaymentMethod';
 import { currency } from '../../utils/currency';
-
+import { db } from '../../firebase';
 import styles from './CreateAccauntPage.module.scss';
+import { FirestoreHandle } from '../../utils/FirestoreHandle';
+
 
 const CreateAccauntPage = () => {
     const dispatch = useAppDispatch();
@@ -25,7 +27,7 @@ const CreateAccauntPage = () => {
     const [name, setName] = useState('');
 
     const total = methods.reduce((prev, item) => prev + item.amount, 0)
-
+    const uid = useAppSelector(state => state.user.uid)
     const createAccaunt = (e: SyntheticEvent) => {
         e.preventDefault();
         const accaunt = {
@@ -34,8 +36,13 @@ const CreateAccauntPage = () => {
             currencyName,
             paymentMethods: methods,
             total,
-            transactions: []
+            transactions: [],
+            balanceHistory: {[new Date().toLocaleDateString()]: total}
+
         }
+        const firestoreHandle = new FirestoreHandle(uid)
+        firestoreHandle.setData(accaunt)
+        // setDoc(doc(db, "users", uid), accaunt)
         dispatch(setNewAccaunt(accaunt))
         navigate('/dashboard')
     }

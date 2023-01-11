@@ -2,6 +2,6 @@ import LoginPage from "./LoginPage";
 import Main from "./main";
 import RegisterPage from "./RegisterPage";
 import CreateAccauntPage from "./CreateAccauntPage";
-// import Dashboard from "./Dashboard";
+import Dashboard from "./Dashboard";
 
-export {Main, LoginPage, RegisterPage, CreateAccauntPage,}
+export {Main, LoginPage, RegisterPage, CreateAccauntPage, Dashboard}

@@ -4,6 +4,7 @@ import Header from "./Header";
 
 import styles from './Layaut.module.scss'
 import { Container } from "../../components/Container";
+import { HaveAccaunt } from "../../hoc/HaveAccaunt";
 
 const PageLoyaut = () => {
     return (

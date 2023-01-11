@@ -1,11 +1,13 @@
 import { configureStore } from "@reduxjs/toolkit";
-import user from './slices/userSlice'
-import accaunt from './slices/accauntSlice'
+import user from './slices/userSlice';
+import accaunt from './slices/accauntSlice';
+import modal from './slices/modalSlice';
 
 export const store = configureStore({
     reducer: {
         user,
-        accaunt
+        accaunt,
+        modal
     }
 });
 

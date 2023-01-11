@@ -1,6 +1,8 @@
 import { TransactionI } from "../redux/slices/accauntSlice";
 import { substractDays } from "./datetime";
 
+//function for develop
+//generate fake transactions 
 export function generateTransactionsData() {
     const categoryes = ['food', 'biils', 'transport', 'entertaiment', 'subscribtions', 'health&sport', 'connections', 'house'];
     const type = ['expense', 'income']

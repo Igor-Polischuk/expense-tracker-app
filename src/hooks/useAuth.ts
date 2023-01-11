@@ -3,14 +3,13 @@ import { getAuth, onAuthStateChanged, User } from "firebase/auth";
 import { useAppDispatch, useAppSelector } from './redux-hooks';
 import { setUser } from '../redux/slices/userSlice';
 
-function useAuth(){
+function useAuth() {
     const userUID = useAppSelector(state => state.user.uid)
 
-    
     const [isAuth, setAuth] = useState(false);
     const [loading, setLoading] = useState(true);
     const dispatch = useAppDispatch();
-    
+
     if (userUID) return [true, false]
 
     getUser().then(user => {
@@ -22,10 +21,10 @@ function useAuth(){
             }))
             setAuth(true);
             setLoading(false);
-        }else{
+        } else {
             setLoading(false);
             dispatch(setUser({
-                email: '', 
+                email: '',
                 uid: ''
             }))
         }

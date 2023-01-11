@@ -1,6 +1,8 @@
 import React from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { setDoc, doc} from 'firebase/firestore';
+import { db } from '../../firebase';
 import AuthForm from '../../components/AuthForm';
 import Input from '../../components/input';
 import useAuth from '../../hooks/useAuthForm';
@@ -26,8 +28,13 @@ const LoginPage: React.FC = () => {
             createUserWithEmailAndPassword(auth, email, password)
                 .then((userCredential) => {
                     const user = userCredential.user;
-                    setErrorMessage('')
+                    setErrorMessage('');
                     setLoading(false);
+                    return user;
+                })
+                .then(user => {
+                    setDoc(doc(db, "users", user.uid), {})
+
                     navigate('/create-accaunt')
                 })
                 .catch((error) => {
@@ -44,11 +51,11 @@ const LoginPage: React.FC = () => {
         <AuthForm title='Sign Up'>
             <>
                 <form onSubmit={onSubmit}>
-                    <Input style={{marginBottom: '20px'}} refprop={emailInputRef} name='email' label='Email' type='email' />
-                    <Input style={{marginBottom: '20px'}} refprop={passwordInputRef} name='password' label='Password' type='password' />
-                    <Input style={{marginBottom: '20px'}} refprop={passwordRepeatInputRef} name='repeat-pass' label='Repeat password' type='password' />
+                    <Input style={{ marginBottom: '20px' }} refprop={emailInputRef} name='email' label='Email' type='email' />
+                    <Input style={{ marginBottom: '20px' }} refprop={passwordInputRef} name='password' label='Password' type='password' />
+                    <Input style={{ marginBottom: '20px' }} refprop={passwordRepeatInputRef} name='repeat-pass' label='Repeat password' type='password' />
                     <p className="error_text">{errorMessage}</p>
-                    {loading ? <Loader/> : <button type='submit' className='button--filled rounded'>Sign in</button>}
+                    {loading ? <Loader /> : <button type='submit' className='button--filled rounded'>Sign in</button>}
                 </form>
                 <p style={{ fontSize: '12px', textAlign: 'center' }}>Already have an accaunt? <Link to='/login'>Sign in</Link></p>
             </>
