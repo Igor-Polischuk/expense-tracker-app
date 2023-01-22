@@ -1,0 +1,50 @@
+.transaction{
+    &__history{
+        background-color: var(--main-color);
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    &__filter{
+        justify-content: flex-end;
+        gap: 10px;
+        button{
+            font-size: 16px;
+        }
+    }
+
+    &__wrapper{
+        list-style: none;
+        padding: 0;
+        // height: 100%;
+        // max-height: 75%;
+        overflow: auto;
+        flex-grow: 1;
+        &::-webkit-scrollbar {
+            width: 3px;
+            border-radius: 2px;
+            margin-left: 10px;
+          }
+          
+          /* Track */
+          &::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.1);
+          }
+          
+          /* Handle */
+          &::-webkit-scrollbar-thumb {
+            border-radius: 5px;
+            background: rgba($color: #5921B5, $alpha: .2);
+          }
+          
+          /* Handle on hover */
+          &::-webkit-scrollbar-thumb:hover {
+            background: rgba($color: #5921B5, $alpha: .9);
+          }
+    }
+
+    &__list_item{
+        margin-bottom: 20px;
+    }
+}

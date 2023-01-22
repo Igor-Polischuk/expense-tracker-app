@@ -3,11 +3,11 @@
 
 @import 'buttons';
 
-*{
+* {
   box-sizing: border-box;
 }
 
-html{
+html {
   height: 100%;
 }
 
@@ -32,7 +32,7 @@ body[data-theme='dark'] {
   --main-color: #1C1C1C;
   --f-color: #fff;
   --f-color-helper: #4d4d4d;
-
+  --line-color: #272727;
 }
 
 body[data-theme='light'] {
@@ -40,6 +40,7 @@ body[data-theme='light'] {
   --main-color: #fff;
   --f-color: #000;
   --f-color-helper: #A6A6A6;
+  --line-color: #F2F2F2;
 }
 
 body {
@@ -86,12 +87,12 @@ input[type=number] {
   color: var(--red)
 }
 
-p{
+p {
   margin: 0;
   padding: 0;
 }
 
-.flex-alc{
+.flex-alc {
   display: flex;
   align-items: center;
 }

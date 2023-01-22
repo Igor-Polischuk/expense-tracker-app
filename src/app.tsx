@@ -1,16 +1,18 @@
 import { Routes, Route } from 'react-router-dom';
-import { LoginPage, Main, RegisterPage, CreateAccauntPage, Dashboard } from './pages';
+import { LoginPage, Main, RegisterPage, CreateAccauntPage, Dashboard, TransactionPage } from './pages';
 import { RequireAuth } from './hoc/RequireAuth';
 import AuthLoyaut from './Loyauts/authLoyaut';
 import PageLoyaut from './Loyauts/PageLoyaut';
 import { AddTransactionModal, AddPaymentsModal } from './components/Modal';
 import { HaveAccaunt } from './hoc/HaveAccaunt';
+// import * as math from "mathjs";
+
+
 
 // import 'chart.js/auto';
 
 
 function App() {
-
   return (
     <div className="App">
       <Routes>
@@ -36,7 +38,7 @@ function App() {
           <Route path='/transactions' element={
             <RequireAuth>
               <HaveAccaunt>
-                <h1>Transactions</h1>
+              <TransactionPage/>
               </HaveAccaunt>
             </RequireAuth>
           } />

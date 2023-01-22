@@ -4,9 +4,12 @@ import Header from "./Header";
 
 import styles from './Layaut.module.scss'
 import { Container } from "../../components/Container";
-import { HaveAccaunt } from "../../hoc/HaveAccaunt";
+import useWindowSize from "../../hooks/useWindowSize";
+// import { HaveAccaunt } from "../../hoc/HaveAccaunt";
 
 const PageLoyaut = () => {
+    // const size = useWindowSize();
+    
     return (
         <main className={styles.main}>
             <Container><Header /></Container>

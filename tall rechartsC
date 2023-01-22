@@ -1,0 +1,17 @@
+[33mcommit 049b6264cb8e368c76e1ae6714b85751867840cc[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: Igor Polischuk <polischuk01@gmail.com>
+Date:   Thu Jan 12 01:30:47 2023 +0200
+
+    create transaction system and connect firestore
+
+[33mcommit 3529d7d04b7773a8e7069d10e6a4b10b2bbe15a7[m
+Author: Igor <polischuk01@gmail.com>
+Date:   Fri Dec 2 23:04:49 2022 +0200
+
+    Created authentication and private pages. Create thmemes with saving to local storage. Create pages loyaut
+
+[33mcommit f9a592fda95e898013f8501c997bbcb17b6570bb[m
+Author: Igor-Polischuk <104837928+Igor-Polischuk@users.noreply.github.com>
+Date:   Fri Dec 2 22:39:42 2022 +0200
+
+    Initial commit

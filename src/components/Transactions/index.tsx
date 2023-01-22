@@ -5,13 +5,13 @@ import Transaction from './Transaction';
 import styles from './Transactions.module.scss';
 
 interface TransactionProps {
-    transactions?: TransactionI[]
+    transactions: TransactionI[]
 }
 
-const Transactions: React.FC<TransactionProps> = () => {
-    const data = useAppSelector(state => state.accaunt.transactions).slice(0, 10)
+const Transactions: React.FC<TransactionProps> = ({transactions}) => {
+    
 
-    const transactionsComponents = data.map((item, i) => <Transaction key={i} {...item}/>)
+    const transactionsComponents = transactions.map((item, i) => <Transaction key={i} {...item}/>)
 
     return ( 
         <ul className={styles.transactions}>

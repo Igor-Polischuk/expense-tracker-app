@@ -40,12 +40,7 @@
     }
 }
 
-.transaction__type {
-    display: flex;
-    justify-content: space-between;
-    gap: 30px;
-    margin: 20px 0;
-}
+
 
 .transaction__info {
     display: flex;
@@ -68,25 +63,6 @@
     padding: 5px;
     border-radius: 4px;
     margin-bottom: 30px;
-}
-
-.type__btn {
-    background-color: transparent;
-    color: var(--f-color);
-    text-transform: capitalize;
-    font-size: 22px;
-    position: relative;
-    cursor: pointer;
-}
-
-.type__btn.active::before {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    height: 2px;
-    background-color: var(--accent-color);
 }
 
 .transfer__input {

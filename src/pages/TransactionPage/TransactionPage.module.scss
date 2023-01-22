@@ -1,0 +1,13 @@
+.transactionPage{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    // grid-template-rows: 1fr 1fr 1fr;
+    padding: 10px 0;
+    height: 100%;
+    gap: 30px;
+}
+
+.date__header{
+    font-family: var(----family);
+    letter-spacing: 2px;
+}

@@ -27,11 +27,6 @@ ChartJS.register(
     Filler,
     Legend
 );
-
-const labels = ['January'];
-
-
-
 export const options = {
     // responsive: true,
     // maintainAspectRatio: false,
@@ -48,8 +43,6 @@ export const options = {
 
 const Chart: React.FC = () => {
     const balanceHistory = useAppSelector(state => state.accaunt.balanceHistory);
-    console.log('render');
-    console.log(balanceHistory);
     
     const data: ChartData<"line", number[], string> = {
         labels: Object.keys(balanceHistory).length > 1 ? Object.keys(balanceHistory) : [...Object.keys(balanceHistory), ...Object.keys(balanceHistory)],

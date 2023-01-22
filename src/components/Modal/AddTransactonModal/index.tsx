@@ -4,27 +4,28 @@ import Modal from '../ModalContainer';
 import { useAppSelector } from '../../../hooks/redux-hooks';
 import { DatePicker } from '../../DatePicker';
 import { CategorySelect } from './CategorySelect';
-import { TransactionType } from './TransactionType';
 import { Transfer } from './Transfer';
 import Loader from '../../Loader';
+import { Tabs } from '../../Tabs';
 
 import styles from './AddTransactionModal.module.scss';
 
 export const AddTransactionModal = () => {
+    const today = new Date(new Date().setHours(0, 0, 0, 0));
     const isOpen = useAppSelector(state => state.modal.showAddTransactionModal);
     const currency = useAppSelector(state => state.accaunt.currencyName)
     const [type, setType] = React.useState('expense');
     const [sum, setSum] = React.useState('');
-    const [date, setDate] = React.useState<Date>(new Date);
+    const [date, setDate] = React.useState<Date>(today);
     const [category, setCategory] = React.useState('');
     const [desc, setDesc] = React.useState('');
     const [comfirmed, setComfirmed] = React.useState(false);
     const { error, loading, sendTransactionData } = useTransactionToFirebase();
-
+    
     React.useEffect(() => {
         setType('expense');
         setSum('');
-        setDate(new Date);
+        setDate(today);
         setCategory('');
         setDesc('');
         setComfirmed(false);
@@ -57,7 +58,7 @@ export const AddTransactionModal = () => {
                         className={styles.ammount}
                         style={{ borderBottom: (comfirmed && !sum) ? '2px solid var(--red)' : '' }} />
                 </div>
-                <TransactionType onChange={(str) => setType(str)} />
+                <Tabs onChange={(str) => setType(str)} options={['expense', 'income', 'transfer']}/>
                 <div className={styles.transaction__info}>
 
                     {type !== 'transfer' ?
