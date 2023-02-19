@@ -1,5 +1,5 @@
 import BalanceInfoCard from '../../components/BalanceInfoCard';
-import LineChart from '../../components/LineChart';
+import LineChart from '../../components/BalanceHistoryInfo';
 import Payments from '../../components/Payments';
 import styles from './Dashboard.module.scss';
 
@@ -13,19 +13,14 @@ const Dashboard = () => {
     return (
         <div className={styles.dashboard}>
             <div className={styles.mainInfoCards}>
-                <BalanceInfoCard title='Available balance' sum={balance}/>
-                <BalanceInfoCard title='Income' sum={0}/>
-                <BalanceInfoCard title='Exspense' sum={0}/>
+                <BalanceInfoCard title='Available balance' sum={balance} />
+                <BalanceInfoCard title='Income' sum={0} />
+                <BalanceInfoCard title='Exspense' sum={0} />
             </div>
             <div className={styles.payments}>
-                <Payments/>
+                <Payments />
             </div>
-            <div>
-                <LineChart title='Analytic'/>
-            </div>
-            {/* <div style={{border: '1px dashed red'}}>
-            </div>
-            <div style={{border: '1px dashed red'}}></div> */}
+            <LineChart title='Analytic' />
         </div>
     );
 }

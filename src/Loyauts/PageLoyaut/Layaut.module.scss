@@ -4,6 +4,7 @@
 
 .main{
     display: grid;
+    overflow: hidden;
     grid-template-columns: auto 5fr;
     grid-template-rows: auto 1fr;
     grid-template-areas: 

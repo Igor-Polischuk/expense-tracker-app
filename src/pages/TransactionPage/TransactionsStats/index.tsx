@@ -1,7 +1,7 @@
 import * as React from 'react';
 import ChoosePeriod from '../../../components/ChoosePeriod';
 import HorizontalBarPercentage from '../../../components/HorizontalBarPercentage';
-import { PieChart } from '../../../components/PieChart';
+import { MyPieChart } from '../../../components/MyPieChart';
 import { useAppSelector } from '../../../hooks/redux-hooks';
 import useWindowSize from '../../../hooks/useWindowSize';
 import { getCategoryPercentageExpense, transactionSumByCategory } from '../../../utils/transactions';
@@ -30,7 +30,7 @@ const TransactionStats = () => {
             <HorizontalBarPercentage title='Expenditure' data={categoryPercent} />
             <div style={{ maxHeight: (height - 70 - 21) / 2.5 }}>
 
-                <PieChart pieData={pieData}/>
+            <MyPieChart pieData={pieData}/>
             </div>
         </div>
     );

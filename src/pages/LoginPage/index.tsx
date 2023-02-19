@@ -1,7 +1,5 @@
 import React from 'react'
 import { Link, useNavigate} from 'react-router-dom';
-import { useAppDispatch } from '../../hooks/redux-hooks';
-import {setUser} from '../../redux/slices/userSlice';
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 
 import AuthForm from '../../components/AuthForm';
@@ -14,7 +12,6 @@ const LoginPage: React.FC = () => {
     const passwordInputRef = React.useRef<HTMLInputElement>(null)
 
     const {loading, setLoading, errorMessage, setErrorMessage} = useAuth();
-    const dispatch = useAppDispatch();
     let navigate = useNavigate();
 
     
@@ -27,7 +24,6 @@ const LoginPage: React.FC = () => {
         setLoading(true)
         signInWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
-                const user = userCredential.user;
                 setLoading(false)
                 navigate('/dashboard')
             })
